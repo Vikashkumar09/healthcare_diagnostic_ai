@@ -237,3 +237,50 @@ If you found this project useful:
 🍴 Fork the project
 🚀 Contribute to improve the system
 
+## ☁️ AWS Deployment
+
+This project is deployed on AWS using Docker and Amazon EC2.
+
+### Steps
+
+1. Launch an EC2 instance (Ubuntu 22.04 recommended)
+2. Install Docker
+3. Clone the repository
+4. Build and run the Docker container
+
+### EC2 Setup
+
+```bash
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Vikashkumar09/healthcare_diagnostic_ai.git
+cd healthcare_diagnostic_ai
+```
+
+### Build Docker Image
+
+```bash
+docker build -t brain-tumor-ai .
+```
+
+### Run Container
+
+```bash
+docker run -p 8000:8000 brain-tumor-ai
+```
+
+### Access API
+
+```
+http://EC2_PUBLIC_IP:8000/docs
+```
+
+This will launch the FastAPI documentation interface.
+
